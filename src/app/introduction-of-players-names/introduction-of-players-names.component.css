@@ -1,0 +1,7 @@
+.row{
+    margin-bottom: 10px;
+}
+.square-box{
+    min-height: 100px;
+    max-width: 100%;
+}

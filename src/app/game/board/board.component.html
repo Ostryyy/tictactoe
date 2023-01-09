@@ -1,0 +1,75 @@
+<div class="container vh-100" [hidden]="winner !== ''">
+  <div class="row text-center" style="margin-bottom: 10px">
+    <div class="col-md-12">
+      <h1 class="text-danger text-uppercase">
+          {{ player1Name }} VS {{ player2Name }}
+        </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" style="margin-bottom: 5px;">
+      <h4 class="text-danger">
+        Current Player:
+        <span *ngIf="player === 'X'" class="text-uppercase">{{ player1Name }}({{ player }})</span>
+        <span *ngIf="player === 'O'" class="text-uppercase">{{ player2Name }}({{ player }})</span>
+      </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 main">
+      <app-square
+        *ngFor="let val of squares; let i = index"
+        [value]="val"
+        (click)="makeMove(i)"
+      >
+      </app-square>
+    </div>
+  </div>
+  <div class="row text-center" style="margin-top: 20px">
+    <div class="col-md-6">
+      <button class="btn btn-danger gameButton" (click)="newGame()">
+        Start new Game
+      </button>
+    </div>
+    <div class="col-md-6">
+      <button
+        class="btn btn-danger gameButton"
+        (click)="nameChange(!pageHidden)"
+      >
+        CHANGE PLAYERS NAMES
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container vh-100 text-center d-flex flex-column justify-content-center" [hidden]="winner === ''">
+  <div class="row text-center" style="margin-bottom: 10px">
+    <div class="col-md-12">
+      <h1 class="text-danger text-uppercase">
+          {{ player1Name }} VS {{ player2Name }}
+        </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center text-danger">
+      <h3>
+        Player <span *ngIf="winner === 'X'">{{ player1Name }}</span>
+        <span *ngIf="winner === 'O'">{{ player2Name }}</span> won the game!
+      </h3>
+    </div>
+  </div>
+  <div class="row text-center" style="margin-top: 20px">
+    <div class="col-md-6">
+      <button class="btn btn-danger gameButton" style="margin-bottom: 10px;" (click)="newGame()">
+        Start new Game
+      </button>
+    </div>
+    <div class="col-md-6">
+      <button
+        class="btn btn-danger gameButton"
+        (click)="nameChange(!pageHidden)"
+      >
+        CHANGE PLAYERS NAMES
+      </button>
+    </div>
+  </div>
+</div>

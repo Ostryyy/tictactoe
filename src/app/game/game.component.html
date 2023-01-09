@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row" style="margin-bottom: 10px">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 board">
+      <app-board [hidden]="!pageHidden === true" [player1Name]="player1Name" [player2Name]="player2Name" [pageHidden]="pageHidden" (newEnterNamesPageHidden)="pageHiddenChange($event)"></app-board>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

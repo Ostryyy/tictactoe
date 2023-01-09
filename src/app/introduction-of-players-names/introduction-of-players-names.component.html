@@ -1,0 +1,30 @@
+  <div class="text-center d-flex flex-column justify-content-center" style="height: 100vh;">
+    <h1 class="text-danger">PLEASE ENTER PLAYER NAMES</h1>
+    <div class="row d-flex" style="margin-top: 25px;">
+      <div class="col-md-4"></div>
+      <div class="col-md-2">
+        <h5 class="text-danger">Player 1:</h5>
+      </div>
+      <div class="col-md-2">
+        <input type="text" class="form-control" [(ngModel)]="nameOfPlayer1" />
+      </div>
+    </div>
+    <div class="row d-flex">
+      <div class="col-md-4"></div>
+      <div class="col-md-2">
+        <h5 class="text-danger">Player 2:</h5>
+      </div>
+      <div class="col-md-2">
+        <input type="text" class="form-control" [(ngModel)]="nameOfPlayer2" />
+      </div>
+    </div>
+    <div>
+      <button
+        class="btn btn-danger"
+        (click)="play(!pageHidden, nameOfPlayer1, nameOfPlayer2)"
+        [disabled]="nameOfPlayer1 === '' || nameOfPlayer2 === ''"
+      >
+        Let's play!
+      </button>
+    </div>
+  </div>
