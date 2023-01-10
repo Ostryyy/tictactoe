@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'TicTacToe';
 
-  EnterNamesPageHidden: boolean = false;
+  EnterNamesPageHidden: boolean = true;
   Player1Name: string = '';
   Player2Name: string = '';
 
