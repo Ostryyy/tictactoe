@@ -32,6 +32,15 @@ export class BoardComponent implements OnInit {
   get player() {
     return this.xIsNext ? 'X' : 'O';
   }
+  isDraw(){
+    for(let i = 0; i < this.squares.length; i++){
+      if(this.squares[i] === '' || this.squares[i] === null)
+      {
+        return '';
+      }
+    }
+    return 'draw';
+  }
 
   makeMove(idx: number) {
     if (!this.squares[idx]) {
@@ -61,6 +70,7 @@ export class BoardComponent implements OnInit {
         return this.squares[a];
       }
     }
-    return '';
+    return this.isDraw();
+    
   }
 }

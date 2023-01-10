@@ -41,7 +41,7 @@
     </div>
   </div>
 </div>
-<div class="container vh-100 text-center d-flex flex-column justify-content-center" [hidden]="winner === ''">
+<div class="container vh-100 text-center d-flex flex-column justify-content-center" *ngIf="winner !== ''">
   <div class="row text-center" style="margin-bottom: 10px">
     <div class="col-md-12">
       <h1 class="text-danger text-uppercase">
@@ -51,9 +51,12 @@
   </div>
   <div class="row">
     <div class="col-md-12 text-center text-danger">
-      <h3>
+      <h3 *ngIf="winner !== 'draw'">
         Player <span *ngIf="winner === 'X'">{{ player1Name }}</span>
         <span *ngIf="winner === 'O'">{{ player2Name }}</span> won the game!
+      </h3>
+      <h3 *ngIf="winner === 'draw'">
+        IT'S A DRAW!
       </h3>
     </div>
   </div>
